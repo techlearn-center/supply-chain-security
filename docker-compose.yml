@@ -1,0 +1,10 @@
+version: "3.8"
+services:
+  registry:
+    image: registry:2
+    ports: ["5000:5000"]
+  trivy:
+    image: aquasec/trivy:latest
+    entrypoint: ["sleep", "infinity"]
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
